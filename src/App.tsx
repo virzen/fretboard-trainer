@@ -240,7 +240,7 @@ function GuessWhichSound() {
               type: "selected",
               frets: [{ coords: state.coords, type: "shown" }]
             }}
-            onFretClick={() => {}}
+            onFretClick={() => { }}
           />
           <button
             onClick={() => {
@@ -295,9 +295,9 @@ export function wrongAnswers(
 
 type FindAllPlacesWithSoundEvent =
   | {
-      type: "answer";
-      fret: Fret;
-    }
+    type: "answer";
+    fret: Fret;
+  }
   | { type: "next" };
 
 function initialFindAllPlacesWithSoundState() {
@@ -378,11 +378,15 @@ export default function App() {
 
   switch (state.type) {
     case "mode selection":
-      return modes.map((m) => (
-        <button key={m} onClick={() => setState({ type: "in mode", mode: m })}>
-          {m}
-        </button>
-      ));
+      return ( 
+        <>
+          {modes.map((m) => (
+            <button key={m} onClick={() => setState({ type: "in mode", mode: m })}>
+              {m}
+            </button>
+          ))}
+        </> 
+      );
     case "in mode":
       return (
         <>
