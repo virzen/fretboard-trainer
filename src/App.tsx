@@ -380,6 +380,7 @@ export default function App() {
     case "mode selection":
       return ( 
         <>
+          {"Go for some bass training!"}
           {modes.map((m) => (
             <button key={m} onClick={() => setState({ type: "in mode", mode: m })}>
               {m}
